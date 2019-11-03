@@ -1,18 +1,23 @@
 package com.gulrecep.issuemanegement.service.imp;
 
+import com.gulrecep.issuemanegement.dto.ProjectDto;
 import com.gulrecep.issuemanegement.entity.Project;
 import com.gulrecep.issuemanegement.repository.ProjectRepository;
 import com.gulrecep.issuemanegement.service.ProjectService;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProjectServiceImpl implements ProjectService {
     private final ProjectRepository projectRepository;
+    private final ModelMapper modelMapper;
 
-    public ProjectServiceImpl(ProjectRepository projectRepository) {
+    public ProjectServiceImpl(ProjectRepository projectRepository,ModelMapper modelMapper) {
         this.projectRepository=projectRepository;
+        this.modelMapper=modelMapper;
     }
 
     @Override
@@ -26,8 +31,11 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project getById(Long id) {
-        return projectRepository.getOne(id);
+    public ProjectDto getById(Long id) {
+
+     Project project =projectRepository.getOne(id);
+     return modelMapper.map(project,ProjectDto.class);
+
     }
 
     @Override

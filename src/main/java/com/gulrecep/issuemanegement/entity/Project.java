@@ -30,5 +30,13 @@ public class Project extends BaseEntity {
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private User manager;
 
-
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id=" + id +
+                ", projectCode='" + projectCode + '\'' +
+                ", projectName='" + projectName + '\'' +
+                ", manager=" + manager +
+                '}';
+    }
 }

@@ -4,6 +4,8 @@ import com.gulrecep.issuemanegement.entity.IssueStatus;
 import lombok.Data;
 
 import java.util.Date;
+//DTO = Data Transfer Object
+
 @Data
 public class IssueDto {
     private Long id;
