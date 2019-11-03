@@ -8,10 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findByUsername(String username);
+
     List<User> findByNameSurname(String nameSurname);
+
     Page<User> findAll(Pageable pageable);
 
     List<User> findAll(Sort sort);

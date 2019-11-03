@@ -9,14 +9,13 @@ import org.springframework.context.annotation.Bean;
 public class IssueManegementApplication {
 
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(IssueManegementApplication.class, args);
 
-
 	}
+
 	@Bean
-	public ModelMapper getModelMapper(){
+	public ModelMapper getModelMapper() {
 		return new ModelMapper();
 	}
 

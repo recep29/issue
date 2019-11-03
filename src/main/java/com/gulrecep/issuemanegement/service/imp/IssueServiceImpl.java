@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+
 @Service
 public class IssueServiceImpl implements IssueService {
     /* setter injection
@@ -22,26 +23,26 @@ public class IssueServiceImpl implements IssueService {
     private final IssueRepository issueRepository;
     private final ModelMapper modelMapper;
 
-   // @Autowired    yazmasakta kendisi inject ediyor.
-   public IssueServiceImpl( IssueRepository issueRepository, ModelMapper modelMapper){
-       this.issueRepository=issueRepository;
-       this.modelMapper =modelMapper;
-   }
+    // @Autowired    yazmasakta kendisi inject ediyor.
+    public IssueServiceImpl(IssueRepository issueRepository, ModelMapper modelMapper) {
+        this.issueRepository = issueRepository;
+        this.modelMapper = modelMapper;
+    }
 
 
     @Override
     public IssueDto save(IssueDto issue) {
-       if (issue.getDate()==null){
-           throw new IllegalArgumentException("can not be null");
-       }
-       //kayıt metodu dto tipinde nesneyi alıyor. Issue tipinde veritabanına kayıt ediyor
+        if (issue.getDate() == null) {
+            throw new IllegalArgumentException("can not be null");
+        }
+        //kayıt metodu dto tipinde nesneyi alıyor. Issue tipinde veritabanına kayıt ediyor
         // ve daha sonra DTO tipine cevirip geri donderiyor;
 
-        Issue issueEntity= modelMapper.map(issue,Issue.class);
-        issueEntity =issueRepository.save(issueEntity);
-        IssueDto parseDto=modelMapper.map(issueEntity,IssueDto.class);
+        Issue issueEntity = modelMapper.map(issue, Issue.class);
+        issueEntity = issueRepository.save(issueEntity);
+        IssueDto parseDto = modelMapper.map(issueEntity, IssueDto.class);
         return parseDto;
-}
+    }
 
     @Override
     public IssueDto getById(Long id) {
@@ -50,13 +51,13 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public TPage<IssueDto> getAllPageable(Pageable pageable) {
-       //controller ve rest apiler dıs dünyaya dto lar üzerinden haberleşecekler
-       // veritabanından entity yardımı ile tüm verileri cektik. ancak frontente modelmapper yardımı ile map edip dtosu üzerinden kendi page miz ile set ettik.
-      Page<Issue> data =issueRepository.findAll(pageable);
-      TPage page= new TPage<IssueDto>();
-      IssueDto[] dtos= modelMapper.map(data.getContent(),IssueDto[].class);
-      page.setStat(data, Arrays.asList(dtos));
-      return page;
+        //controller ve rest apiler dıs dünyaya dto lar üzerinden haberleşecekler
+        // veritabanından entity yardımı ile tüm verileri cektik. ancak frontente modelmapper yardımı ile map edip dtosu üzerinden kendi page miz ile set ettik.
+        Page<Issue> data = issueRepository.findAll(pageable);
+        TPage page = new TPage<IssueDto>();
+        IssueDto[] dtos = modelMapper.map(data.getContent(), IssueDto[].class);
+        page.setStat(data, Arrays.asList(dtos));
+        return page;
     }
 
     @Override

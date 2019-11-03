@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
-        if (user.getEmail()==null){
+        if (user.getEmail() == null) {
             throw new IllegalArgumentException("can not be Email");
         }
         return userRepository.save(user);
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getByUsername(String username) {
-        return  userRepository.findByUsername(username);
+        return userRepository.findByUsername(username);
     }
 
     @Override

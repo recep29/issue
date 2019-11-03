@@ -9,9 +9,13 @@ import java.util.List;
 
 public interface UserService {
     User save(User user);
+
     User getById(Long id);
-   Page<User>  getAllPageable(Pageable pageable);
-   List<User> getByUsername(String username);
-   List<User> getByNameSurname(String nameSurname);
+
+    Page<User> getAllPageable(Pageable pageable);
+
+    List<User> getByUsername(String username);
+
+    List<User> getByNameSurname(String nameSurname);
 
 }

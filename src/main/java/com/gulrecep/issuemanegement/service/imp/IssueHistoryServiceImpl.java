@@ -11,17 +11,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class IssueHistoryServiceImpl implements IssueHistoryService {
     private final IssueHistoryRepository issueHistoryRepository;
-// gerenate constructor dediğimde yukardaki final değişkenine gore otomatik içini doldurdu.
+
+    // gerenate constructor dediğimde yukardaki final değişkenine gore otomatik içini doldurdu.
     public IssueHistoryServiceImpl(IssueHistoryRepository issueHistoryRepository) {
         this.issueHistoryRepository = issueHistoryRepository;
     }
 
     @Override
     public IssueHistory save(IssueHistory issueHistory) {
-        if(issueHistory.getDate()==null){
+        if (issueHistory.getDate() == null) {
             throw new IllegalArgumentException("issueHistory date is not defined");
         }
-       issueHistory= issueHistoryRepository.save(issueHistory);
+        issueHistory = issueHistoryRepository.save(issueHistory);
         return issueHistory;
     }
 
