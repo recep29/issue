@@ -30,11 +30,17 @@ public class IssueServiceImpl implements IssueService {
     }
 
 
+
+
     @Override
     public IssueDto save(IssueDto issue) {
-        if (issue.getDate() == null) {
+       /* if (issue.getDate() == null) {
             throw new IllegalArgumentException("can not be null");
+
+
         }
+
+        */
         //kayıt metodu dto tipinde nesneyi alıyor. Issue tipinde veritabanına kayıt ediyor
         // ve daha sonra DTO tipine cevirip geri donderiyor;
 
@@ -46,7 +52,10 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public IssueDto getById(Long id) {
-        return null;
+
+
+                Issue issue =issueRepository.getOne(id);
+                return modelMapper.map(issue,IssueDto.class);
     }
 
     @Override
@@ -61,7 +70,14 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public Boolean delete(IssueDto issue) {
+    public Boolean delete(Long issueId) {
+          issueRepository.deleteById(issueId);
+          return true;
+    }
+
+
+    @Override
+    public IssueDto update(Long id, IssueDto issue) {
         return null;
     }
 }

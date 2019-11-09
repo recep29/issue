@@ -2,6 +2,7 @@ package com.gulrecep.issuemanegement.api;
 
 import com.gulrecep.issuemanegement.dto.ProjectDto;
 import com.gulrecep.issuemanegement.service.imp.ProjectServiceImpl;
+import com.gulrecep.issuemanegement.util.ApiPaths;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ import javax.validation.Valid;
  * DELETE
  */
 @RestController
-@RequestMapping("/project")
+@RequestMapping(ApiPaths.ProjectCtrl.CTRL)
 public class ProjectController {
 
     //dışarıya DTO lar üzerinden iletişimde bulunuyoruz
