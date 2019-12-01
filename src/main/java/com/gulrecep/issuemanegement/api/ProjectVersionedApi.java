@@ -2,7 +2,6 @@ package com.gulrecep.issuemanegement.api;
 
 import com.gulrecep.issuemanegement.dto.ProjectDto;
 import com.gulrecep.issuemanegement.service.imp.ProjectServiceImpl;
-import com.gulrecep.issuemanegement.util.ApiPaths;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
