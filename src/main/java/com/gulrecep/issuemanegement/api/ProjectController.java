@@ -22,6 +22,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping(ApiPaths.ProjectCtrl.CTRL)
 @Slf4j
+@CrossOrigin
 public class ProjectController {
 
     //dışarıya DTO lar üzerinden iletişimde bulunuyoruz

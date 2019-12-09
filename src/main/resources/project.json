@@ -1,17 +1,17 @@
 
 [
   {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
+    "_class": "com.gulrecep.issuemanegement.entity.User",
     "projectCode": "IM",
     "projectName": "JSON DENEME KAYDI01"
   },
   {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
+    "_class": "com.gulrecep.issuemanegement.entity.User",
     "projectCode": "IM01",
     "projectName": "JSON DENEME KAYDI02"
   },
   {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
+    "_class": "com.gulrecep.issuemanegement.entity.User",
     "projectCode": "IM02",
     "projectName": "JSON DENEME KAYDI03"
   }
