@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * http metotları
@@ -41,6 +42,7 @@ public class ProjectController {
         return ResponseEntity.ok(data);
 
     }
+
 
     @GetMapping("/{id}")
     //  @ApiOperation(value = "Get By Id Operation",response = ProjectDto.class)

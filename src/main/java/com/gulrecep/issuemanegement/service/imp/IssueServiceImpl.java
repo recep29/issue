@@ -30,8 +30,6 @@ public class IssueServiceImpl implements IssueService {
     }
 
 
-
-
     @Override
     public IssueDto save(IssueDto issue) {
        /* if (issue.getDate() == null) {
@@ -54,8 +52,8 @@ public class IssueServiceImpl implements IssueService {
     public IssueDto getById(Long id) {
 
 
-                Issue issue =issueRepository.getOne(id);
-                return modelMapper.map(issue,IssueDto.class);
+        Issue issue = issueRepository.getOne(id);
+        return modelMapper.map(issue, IssueDto.class);
     }
 
     @Override
@@ -71,8 +69,8 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public Boolean delete(Long issueId) {
-          issueRepository.deleteById(issueId);
-          return true;
+        issueRepository.deleteById(issueId);
+        return true;
     }
 
 

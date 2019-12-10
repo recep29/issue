@@ -1,0 +1,13 @@
+{
+  "Dashboard": "Dashboard",
+  "Project List": "Project List",
+  "Project Name is required": "Project Name is required",
+  "Project Code is required": "Project Code is required",
+  "Project Code should be (min) 2 char": "Project Code should be (min) 2 char",
+  "Project Name should be (min) 2 char": "Project Name should be (min) 2 char",
+  "Project Manager is required": "Project Manager is required",
+  "Save": "Save",
+  "Close": "Close",
+  "Project Manager": "Project Manager",
+  "Project Detail": "Project Detail"
+}

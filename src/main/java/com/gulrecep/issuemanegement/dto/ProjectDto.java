@@ -21,7 +21,7 @@ public class ProjectDto {
     //  @ApiModelProperty(required = true,value = "Code Of Project")
     private String projectCode;
     @NotNull
-    // @ApiModelProperty(required = true,value = "NAme Of Project")
+    // @ApiModelProperty(required = true,value = "Name Of Project")
     private String projectName;
 
 }

@@ -14,17 +14,13 @@ export class ProjectComponent implements OnInit {
   modalRef: BsModalRef;
   projectForm: FormGroup;
 
-  @ViewChild('tplProjectDeleteCell', {static: true}) tplProjectDeleteCell: TemplateRef<any>;
+  @ViewChild('tplProjectDeleteCell', {static: false}) tplProjectDeleteCell: TemplateRef<any>;
 
   page = new Page();
   cols = [];
   rows = [];
 
   constructor(private projectService: ProjectService, private modalService: BsModalService, private formBuilder: FormBuilder) {
-  }
-
-  get f() {
-    return this.projectForm.controls
   }
 
   ngOnInit() {
@@ -44,6 +40,10 @@ export class ProjectComponent implements OnInit {
 
   }
 
+  get f() {
+    return this.projectForm.controls
+  }
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
@@ -56,7 +56,7 @@ export class ProjectComponent implements OnInit {
       response => {
         console.log(response);
       }
-    );
+    )
     this.setPage({offset: 0});
     this.closeAndResetModal();
   }

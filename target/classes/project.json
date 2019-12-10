@@ -1,19 +1,24 @@
 
 [
   {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
-    "projectCode": "IM",
-    "projectName": "JSON DENEME KAYDI01"
+  "_class": "com.gulrecep.issuemanegement.entity.User",
+  "username": "user-121",
+  "nameSurname": "xsurnamedfs",
+  "email": "glrecep@teias.gov.trf"
+},
+  {
+    "_class": "com.gulrecep.issuemanegement.entity.User",
+    "username": "user-13s",
+    "nameSurname": "xsurnam2ef",
+    "email": "glrecep@teias.gov.tr3a"
   },
   {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
-    "projectCode": "IM01",
-    "projectName": "JSON DENEME KAYDI02"
-  },
-  {
-    "_class": "com.gulrecep.issuemanegement.entity.Project",
-    "projectCode": "IM02",
-    "projectName": "JSON DENEME KAYDI03"
+    "_class": "com.gulrecep.issuemanegement.entity.User",
+    "username": "user-1vz",
+    "nameSurname": "xsurname3fa",
+    "email": "glrecep@teias.gov.tr3vzs"
   }
+
 ]
+
 
